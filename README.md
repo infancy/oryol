@@ -1,3 +1,23 @@
+# Oryol_
+
+## 编译
+
+我的平台是 win10 + VS2017，按照 README 的指引在 fips build 的这一步报“警告被视为错误 - 没有生成“object”文件”的错误（原因与字符编码有关），解决方法是继续执行 fips gen 的命令，生成 VS2017 的工程，关闭工程中 Imports 下三个工程的“将警告视为错误”的属性，然后编译即可。
+
+```bash
+> mkdir oryol（存放 oryol、fips、fips-* 等）
+> cd oryol
+
+> git clone --depth 5 https://github.com/floooh/oryol
+
+> cd oryol
+> ./fips diag tools
+> ./fips build（这一步失败了，不过没关系，在 VS 里解决）
+> ./fips gen（生成 VS2017 的工程）
+> ./fips open
+
+```
+
 # Oryol
  
 A small, portable and extensible 3D coding framework written in C++:
